@@ -5,14 +5,20 @@
 import random
 
 list_of_numbers = random.sample(range(40, 300000), 50)
+lst0 = sorted(list_of_numbers)
+print(sorted(list_of_numbers))
+print()
+min_ = lst0[0]
+max_ = lst0[-1]
+sum_min_max = min_ + max_
+avg_ = sum_min_max / 2
+print('минимальное значение в сгенерированном списке:', min_)
+print('максимальное значение в сгенерированном списке:', max_)
+print('среднее арифметическое наибольшего и наименьшего значений списка:', round(avg_))
+print()
 
 
 def func_():
-    lst0 = sorted(list_of_numbers)
-    min_ = lst0[0]
-    max_ = lst0[-1]
-    sum_min_max = min_ + max_
-    avg_ = sum_min_max / len(list_of_numbers)
 
     lst1 = []
     for i in list_of_numbers:
