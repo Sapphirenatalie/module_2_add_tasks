@@ -13,20 +13,18 @@ start = time.time()
 
 list_of_numbers = [random.randint(5, 500) for i in range(10000)]
 sort_list_of_numbers = sorted(list_of_numbers)
+rev_list_of_numbers = sort_list_of_numbers[::-1]
 
 
 def special_func():
     list_1 = []
 
-    for i in sort_list_of_numbers:
+    for i in rev_list_of_numbers:
         if i % 5 == 0 and i not in list_1:
             list_1.append(i)
 
-    sort_list_1 = list_1
-    rev_list_1 = list_1[::-1]
-
     list_2 = []
-    for j in rev_list_1:
+    for j in list_1:
         avg = sum(list_1) / len(list_1)
         if j > avg:
             list_2.append(j)
