@@ -4,6 +4,8 @@ from math import sqrt
 import random
 import time
 
+start = time.time()
+
 list_of_numbers = [9567, 9661, 6541, 4146, 534, 5627, 6900, 5803, 7794, 1174, 2365, 9759, 355, 2071, 5053, 1252, 4063,
                    3068, 9552, 9895, 5642, 3286, 5740, 9318, 1684, 8758, 9520, 9420, 9799, 2893, 728, 891, 1560, 5006,
                    8043, 5106, 3597, 9990, 191, 3098, 5996, 6295, 7755, 4077, 6759, 2929, 2424, 6006, 8318, 565, 9482,
@@ -17,20 +19,28 @@ list_of_numbers = [9567, 9661, 6541, 4146, 534, 5627, 6900, 5803, 7794, 1174, 23
                    7933, 6472, 4437, 867, 3251, 9073, 2813, 4111, 7759, 158, 6482, 2444, 6931, 9917, 6325, 8541, 8535,
                    7060, 2782, 6913, 9085, 6724, 9380, 4257, 6210, 7325, 7213, 8028, 3958, 3319]
 
-print("максимальное число  в списке - ", max(list_of_numbers))
-print("минимальное число  в списке - ", min(list_of_numbers))
+lst0 = sorted(list_of_numbers)
+max_ = lst0[0]
+min_ = lst0[-1]
+print("максимальное число  в списке - ", max_)
+print("минимальное число  в списке - ", min_)
 x = random.randint(min(list_of_numbers), max(list_of_numbers))
-a = len(list_of_numbers)
-print("Корни чисел, которые меньше", x, "в списке из", a, "чисел:")
 
+a = len(lst0)
+print("Корни чисел, которые меньше", x, "в списке из", a, "чисел:")
 
 count = 0
 
-for i in sorted(list_of_numbers):
+for i in lst0:
     if i < x:
         count += 1
-
         print(f'{count}. √{i} = {round(sqrt(i), 2)}')
-
+    else:
+        break
 
 print('всего', count)
+
+finish = time.time()
+res = (finish - start) * 1000
+
+print('Время работы в миллисекундах: ', res)
